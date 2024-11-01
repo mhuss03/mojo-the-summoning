@@ -1,9 +1,18 @@
-const { sequelize, DataTypes, Model } = require('../db/config');
+const { db, DataTypes, Model } = require("../db/config");
 
-const Deck = sequelize.define('Deck', {
-    id: DataTypes.INTEGER,
-    name: DataTypes.STRING,
-    xp: DataTypes.INTEGER
-})
+const Deck = db.define("Deck", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  xp: {
+    type: DataTypes.INTEGER,
+  },
+});
 
-exports.module = { Deck };
+module.exports = Deck;

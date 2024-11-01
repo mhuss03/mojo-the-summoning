@@ -1,9 +1,9 @@
 // add your database connection here
-const { Sequelize, DataTypes, Model } = require('sequelize');
+const { Sequelize, DataTypes, Model } = require("sequelize");
 
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: 'db.sqlite'
-  });
+const db = new Sequelize({
+  dialect: "sqlite",
+  storage: "./src/db/db.sqlite",
+});
 
-exports.module = { sequelize, DataTypes, Model }
+module.exports = { db, DataTypes, Model };

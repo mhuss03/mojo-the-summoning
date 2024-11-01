@@ -1,10 +1,21 @@
-const { sequelize, DataTypes, Model } = require('../db/config');
+const { db, DataTypes, Model } = require("../db/config");
 
-const Attack = sequelize.define('Deck', {
-    id: DataTypes.INTEGER,
-    title: DataTypes.STRING,
-    mojoCost: DataTypes.INTEGER,
-    staminaCost: DataTypes.INTEGER,
-})
+const Attack = db.define("Attacks", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+  },
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  mojoCost: {
+    type: DataTypes.INTEGER,
+  },
+  staminaCost: {
+    type: DataTypes.INTEGER,
+  },
+});
 
-exports.module = { Attack };
+module.exports = Attack;
